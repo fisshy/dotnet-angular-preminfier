@@ -49,3 +49,13 @@ angular.module('myApp').controller('MyCntrl', ["$scope",function($scope){
 ```js
 angular.module("myApp",[]).run(["$rootScope",function(n){n.yo="Yo Fishy!"}]);angular.module("myApp").controller("MyCntrl",["$scope",function(n){n.test="Hello World!"}])
 ```
+
+
+### Todo
+
+1. Need to support injections within injections
+2. Support injections if written like
+```js
+var myCntrl = function($scope) {};
+angular.module('myModule').controller('myCntrl', myCntrl);
+```
