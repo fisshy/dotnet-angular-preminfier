@@ -53,9 +53,12 @@ angular.module("myApp",[]).run(["$rootScope",function(n){n.yo="Yo Fishy!"}]);ang
 
 ### Todo
 
-1. Need to support injections within injections
-2. Support injections if written like
+1. Need to support injections within injections ( It's currently not grabbing the interceptors injection)
 ```js
-var myCntrl = function($scope) {};
-angular.module('myModule').controller('myCntrl', myCntrl);
+angular.module('myModule')
+.config(function ($httpProvider) {
+  $httpProvider.interceptors.push(function ($q, $rootScope) {
+  });
+});
 ```
+2. Should write unit tests.
