@@ -44,3 +44,8 @@ angular.module('myApp').controller('MyCntrl', ["$scope",function($scope){
 }]);
 
 ```
+
+### After JsMinify
+```js
+angular.module("myApp",[]).run(["$rootScope",function(n){n.yo="Yo Fishy!"}]);angular.module("myApp").controller("MyCntrl",["$scope",function(n){n.test="Hello World!"}])
+```
