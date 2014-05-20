@@ -1,0 +1,47 @@
+<h1>Angular Preminifier for ASP.NET MVC Bundling</h1>
+
+<p>This is not complete and very unstable, so do not use in production yet but please contribute =)</p>
+
+<h3>Usage</h3>
+
+<p>```C#
+var js = new Bundle("~/bundles/angular").Include(
+                "~/Scripts/<em>.js",
+                "~/Scripts/controllers/</em>.js");</p>
+
+<p>js.Transforms.Add(new AngularPreMinifierTransform());
+js.Transforms.Add(new JsMinify());</p>
+
+<p>bundles.Add(js);</p>
+
+<p>BundleTable.EnableOptimizations = true;
+```</p>
+
+<h3>Input</h3>
+
+<p><code>js
+angular.module('myApp', []).run(function($rootScope){
+  $rootScope.yo = "Yo Fishy!";
+});
+angular.module('myApp').controller('MyCntrl', function($scope){
+  $scope.test = 'Hello World!';
+  function name () {
+    console.log("test");
+  }
+});
+</code></p>
+
+<h3>Output</h3>
+
+<p>```js
+angular.module('myApp', []).run(["$rootScope",function($rootScope){
+  $rootScope.yo = "Yo Fishy!";
+}]);
+angular.module('myApp').controller('MyCntrl', ["$scope",function($scope){
+  $scope.test = 'Hello World!';
+  function name () {
+    console.log("test");
+  }
+}]);</p>
+
+<p>```</p>
