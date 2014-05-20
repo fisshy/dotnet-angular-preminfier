@@ -15,7 +15,7 @@ namespace ng_bundle_web
 
 
             js.Transforms.Add(new AngularPreMinifierTransform());
-            js.Transforms.Add(new JsMinify());
+           // js.Transforms.Add(new JsMinify());
 
             bundles.Add(js);
 
