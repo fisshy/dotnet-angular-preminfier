@@ -117,8 +117,14 @@ namespace ng_bundle
             }
             else if (c == ')')
             {
+                var _param = param.Trim();
 
-                Params.Add("\"" + param.Trim() + "\"");
+                if (!string.IsNullOrEmpty(_param))
+                {
+
+                    Params.Add("\"" + _param  + "\"");
+                }
+
                 param = string.Empty;
                 doingParams = false;
                 completeParams = true;

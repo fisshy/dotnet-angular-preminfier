@@ -11,7 +11,9 @@ namespace ng_bundle_web
         {
             var js = new Bundle("~/bundles/angular").Include(
                           "~/Scripts/*.js",
-                          "~/Scripts/controllers/*.js");
+                          "~/Scripts/controllers/*.js",
+                          "~/Scripts/directives/*.js"
+                          );
 
 
             js.Transforms.Add(new AngularPreMinifierTransform());
