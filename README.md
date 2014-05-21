@@ -1,4 +1,4 @@
-Angular Preminifier for ASP.NET MVC Bundling 
+Angular Preminfier for ASP.NET MVC Bundling 
 =========================
 
 This is not complete and very unstable, so do not use in production yet but please contribute =)
